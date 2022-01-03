@@ -7,7 +7,7 @@ app.use(express.urlencoded())
 
 
 app.get("/", (req, res) => {
-  res.sendFile(`${__dirname}/assets/index.html`)
+  res.sendFile(`${__dirname}/views/index.html`)
 })
 app.get("/AAaAgVlEAWvUCVLTXbWv", (req, res) => {
   res.sendFile(`${__dirname}/assets/newspaper.jpg`)
@@ -27,6 +27,6 @@ app.post("/secret", (req, res) => {
   }
 })
 
-app.listen(3000, () => console.log("server has started !"))
+app.listen(process.env.PORT || 5000, () => console.log("server has started !"))
 
 
